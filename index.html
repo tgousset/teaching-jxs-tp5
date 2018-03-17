@@ -16,7 +16,16 @@
         <div  ng-controller="myController">
             {{id}}
             <form name="myForm">
-                <input ng-model="id"/>
+                <input ng-model="id"/> </br>
+
+                <select name="repeatSelect" id="repeatSelect" ng-model="list.model">
+                    <option ng-repeat="pokemon in list.pokemons | filter:searchText" value="{{pokemon.id}}">{{pokemon.name}}</option>
+                </select>
+
+                model = {{list.model}}
+                </br>
+                <button ng-click="$log.log(list.model)">Go</button>
+
             </form>
         </div>
 
