@@ -6,3 +6,8 @@ pokeApp.constant('POKEAPI', 'http://pokeapi.co');
 pokeApp.config(['$resourceProvider', function($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
+
+pokeApp.controller('myController',['$scope', '$log',
+    function($scope, $log){
+        $scope.id = '1';
+    }]);
