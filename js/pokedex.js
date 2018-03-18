@@ -22,3 +22,10 @@ pokeApp.controller('myController',['$scope', '$log',
             ]
         };
     }]);
+
+pokeApp.controller('httpController', function($scope, $http) {
+    $http.get("https://pokeapi.co/api/v1/pokedex/")
+        .then(function(response) {
+            $scope.data = response.data;
+        });
+});
