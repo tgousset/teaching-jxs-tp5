@@ -29,3 +29,8 @@ pokeApp.controller('httpController', function($scope, $http) {
             $scope.data = response.data;
         });
 });
+
+pokeApp.factory("infoPokeFactory", function ($resource) {
+    return $resource("http://pokeapi.co/api/v1/pokemon/:id/");
+});
+
